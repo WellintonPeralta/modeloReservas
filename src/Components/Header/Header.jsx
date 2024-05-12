@@ -1,5 +1,6 @@
 import epnLogo from "../../assets/EPN_logo_big.png";
 import contorno from "../../assets/contorno.png";
+import user from "../../assets/perfil.png";
 import "./Header.css"
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -9,7 +10,12 @@ export const Header = () =>{
     const [enlaceActivo, setEnlaceActivo] = useState('/');
     return(
         <header>
-        <div className="encabezado1"></div>
+        <div className="encabezado1">
+            <a href="#">
+                <img src={user} alt="Dropdown" />
+                
+            </a>
+        </div>
         <div className="encabezado2">
             <div className="logo"><img src={epnLogo} alt="epn"/></div>
             <h1>Reservas Deportivas</h1>

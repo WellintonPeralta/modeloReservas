@@ -59,7 +59,7 @@ const MainCanchas = ()=>{
         </div>
         <div className="botones">
             <button onClick= {() => navigate('/implementos')}>Reservar</button>
-            <button>Cancelar</button>
+            <button onClick= {() => navigate('/')}>Cancelar</button>
 
         </div>
     </div>

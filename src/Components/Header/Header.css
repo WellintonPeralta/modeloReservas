@@ -29,7 +29,20 @@
         width: 100%;
         height: 40px;
         background-color: var(--azul--);
+        display: grid;
+        justify-content: end;
     }
+    .encabezado1 a {
+        display: flex;
+        align-items: center;
+    }
+      
+    .encabezado1 a img {
+        margin-right: 50px;
+        width: 35px;
+        border-radius: 50%;
+    }
+
     .encabezado2{
         background-color: var(--blanco--);
         width: 100%;

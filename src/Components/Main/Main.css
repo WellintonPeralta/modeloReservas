@@ -145,6 +145,79 @@
         color: var(--azul--);
         border: 0;
     }
+
+    .botones-horario {
+        height: 60px;
+        width: 80%;
+        margin: 0% auto;
+        margin-bottom: 3%;
+        background-color: var(--gris--);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    /*calendario*/
+    .contenedorCalendario{
+        display: grid;
+    }
+    
+    .calendario{
+        width: 80%;
+        margin: 3% auto;
+        grid-template-columns: auto repeat(5, 1fr);
+        border-collapse: collapse;
+      }
+      
+    .dias {
+        display: grid;
+        grid-template-rows: auto;       
+        grid-template-columns: auto repeat(5, 1fr);
+    }   
+    .empty-cell{
+        width: 80px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        text-align: center;
+        background-color: var(--gris--);
+    }
+
+    .days-cells {
+        padding: 5px;
+        border: 1px solid #ccc;
+        text-align: center;
+        background-color: var(--gris--);
+    }
+
+    .day-cell {
+        padding: 5px;
+        border: 1px solid #ccc;
+        text-align: center;
+
+    }
+
+    .hour-cell {
+        width: 80px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        text-align: center;
+        background-color: var(--gris--);
+    }
+
+    .time-slot {
+        display: grid;
+        grid-template-columns: auto repeat(5, 1fr);
+    }
+
+    .day-cell:hover {
+        background-color:var(--azul--);
+        cursor: pointer;
+        color: var(--blanco--);
+    }
+
+    .selected {
+        background-color: var(--azul--);
+        color: var(--blanco--);
+    }
 }
 
 

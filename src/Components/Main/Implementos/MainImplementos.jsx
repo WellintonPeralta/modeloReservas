@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import '../Main.css' 
+import { useNavigate } from 'react-router-dom';
 
 const MainImplementos = () => {
-
+    const navigate = useNavigate();
     const [selectedImplemento, setSelectedImplemento] = useState('Principal');
 
     const handleImplementoClick = (implementoName) => {
     setSelectedImplemento(implementoName);
-   
+    
   };
 
   
@@ -31,8 +32,8 @@ const MainImplementos = () => {
         </div>
       </div>
       <div className="botones">
-        <button>Reservar</button>
-        <button>Cancelar</button>
+          <button onClick= {() => navigate('/horario')}>Reservar</button>
+          <button onClick= {() => navigate('/')}>Cancelar</button>
       </div>
     </div>
   );
