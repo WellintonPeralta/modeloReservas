@@ -1,42 +1,103 @@
 import React, { useState } from 'react';
-import imagesData from './ImagenesCanchas';
+import CanchaCard from './CanchasCards'; 
 import '../Main.css'
+
 import { useNavigate } from 'react-router-dom';
+import imgCanchaTemp from '../../../assets/perfil.png'
+import imgReferenciaTemporal from '../../../assets/imgJugando.jpg'
 
 const MainCanchas = ()=>{
-    const navigate = useNavigate();
-    // const [selectedImage, setSelectedImage] = useState({fotoCanchas});
-    const [selectedSport, setSelectedSport] = useState('Principal');
 
-    const handleSportClick = (sportName) => {
-        // setSelectedImage({fotoCanchas});
+    const canchas = {
+        Futbol: [
+            {
+                id:1,
+                etiqueta:'Cancha 1',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:2,
+                etiqueta:'Cancha 2',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:3,
+                etiqueta:'Cancha 3',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:4,
+                etiqueta:'Cancha 4',
+                imagen:imgCanchaTemp
+            },
+        ],
+        Basquet: [
+            {
+                id:1,
+                etiqueta:'CanchaB 1',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:2,
+                etiqueta:'CanchaB 2',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:3,
+                etiqueta:'CanchaB 3',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:4,
+                etiqueta:'CanchaB 4',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:5,
+                etiqueta:'CanchaB 5',
+                imagen:imgCanchaTemp
+            },
+        ],
+        Volley: [
+            {
+                id:1,
+                etiqueta:'Canchav 1',
+                imagen:imgCanchaTemp
+            },
+            {
+                id:2,
+                etiqueta:'Canchav 2',
+                imagen:imgCanchaTemp
+            },
+            
+            
+        ]
+    }
+    
+    
+    const navigate = useNavigate();
+    const [selectedSport, setSelectedSport] = useState('Basquet');
+    // const [idCardSeleccionada, setIdCardSeleccionada] = useState(null);
+
+    const handleDeporteClick = (sportName) => {
         setSelectedSport(sportName);
-        updateCanchasContent(sportName);
     };
     
-    const updateCanchasContent = (sportName) => {
-        const content = renderImages(sportName);
-        const canchasElement = document.querySelector('.canchas');
-        canchasElement.innerHTML = content;
-    };
 
-    const renderImages = (sportName) => {
-        const images = imagesData[sportName];
-        console.log(images)
-        
+    const renderCards = (sportName) => {
         return (
-          <div className="canchas-images">
-            {images.map((image) => (
-              <div className="cancha-image" key={image.title}>
-                <img src={image.src} alt={image.src}/>
-                
-              </div>
-            ))}
-          </div>
+          <>
+            {canchas[sportName].map(cancha => {
+                return(
+                    <CanchaCard  key={cancha.id} cancha={cancha}/>
+                )
+            })
+            }
+          </>
         );
     };
     
-
+    
 
     return(
         <div className="principal">
@@ -45,16 +106,21 @@ const MainCanchas = ()=>{
         </div>
         <div className="container">
             <div className="nombre-deportes">
-                <div className='deporte' onClick={() => handleSportClick('Basquet')}>Básquet</div>
-                <div className='deporte' onClick={() => handleSportClick('Volley')}>Volley</div>
-                <div className='deporte' onClick={() => handleSportClick('Futbol')}>Fútbol</div>
-                <div className='deporte' onClick={() => handleSportClick('Futbol Sala')}>Fútbol Sala</div>
-                <div className='deporte' onClick={() => handleSportClick('Pista')}>Pista</div>
-        
+                <div className='deporte' onClick={() => handleDeporteClick('Basquet')}>Básquet</div>
+                <div className='deporte' onClick={() => handleDeporteClick('Volley')}>Volley</div>
+                <div className='deporte' onClick={() => handleDeporteClick('Futbol')}>Fútbol</div>
+                <div className='deporte' onClick={() => handleDeporteClick('Futbol Sala')}>Fútbol Sala</div>
+                <div className='deporte' onClick={() => handleDeporteClick('Pista')}>Pista</div>
             </div>
-
-            <div className="canchas">
-                {renderImages(selectedSport)}
+            <div className="canchas-cards">
+                {renderCards(selectedSport)}
+            </div>
+            <div className="informacion">
+                <h3>Imagen de Referencia</h3>
+                <div>
+                    <img src={imgReferenciaTemporal} alt="Canchas EPN" />
+                </div>
+               
             </div>
         </div>
         <div className="botones">

@@ -7,35 +7,34 @@ function MainHorario({ handleAvailabilityClick }) {
     const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
     const horas = Array.from({ length: 9 }, (_, index) => index + 8);
     const [selected, setSelected] = useState(null);
-
+ 
   return (
     <div className = "contenedorCalendario">
         <div className="calendario">
         <div className="dias">
-            <div className="empty-cell">Hora</div>
-            {dias.map((day) => (
-            <div key={day} className="days-cells">
-                {day}
+            <div className="celda-vacia">Hora</div>
+            {dias.map((dia) => (
+            <div key={dia} className="celda-dias">
+                {dia}
             </div>
             ))}
         </div>
-        {horas.map((hour) => (
-            <div key={hour} className="time-slot">
-            <div className="hour-cell">{`${hour}-${hour + 1}`}</div>
-            {dias.map((day) => (
-                <div
-                key={`${day}-${hour}`}
-                className={`day-cell ${selected === `${day}-${hour}` ? 'selected' : ''}`}
+        {horas.map((hora) => (
+            <div key={hora} className="fila-hora">
+            <div className="celda-horas">{`${hora}-${hora + 1}`}</div>
+            {dias.map((dia) => (
+                <div key={`${dia}-${hora}`}
+                className={`celda-dia ${selected === `${dia}-${hora}` ? 'seleccionada' : ''}`}
                 onClick={() => {
-                    // handleAvailabilityClick(`${day}-${hour}`);
-                    setSelected(selected === `${day}-${hour}` ? null : `${day}-${hour}`);
+                    // handleAvailabilityClick(`${dia}-${hora}`);
+                    setSelected(selected === `${dia}-${hora}` ? null : `${dia}-${hora}`);
                 }}
                 >
-                {selected === `${day}-${hour}` ? 'Reservar' : 'Disponible'}
+                    {selected === `${dia}-${hora}` ? 'Reservar' : 'Disponible'}
                 </div>
             ))}
             </div>
-        ))}
+        ))} 
         </div>
         <div className="botones-horario">
             <button onClick= {() => navigate('/')}>Confirmar</button>

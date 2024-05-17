@@ -5,7 +5,7 @@ import "./Header.css"
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-export const Header = () =>{
+export const Header = ({}) =>{
     const navigate = useNavigate();
     const [enlaceActivo, setEnlaceActivo] = useState('/');
     return(
@@ -13,19 +13,23 @@ export const Header = () =>{
         <div className="encabezado1">
             <a href="#">
                 <img src={user} alt="Dropdown" />
-                
+               
             </a>
         </div>
         <div className="encabezado2">
-            <div className="logo"><img src={epnLogo} alt="epn"/></div>
+            <div className="logoEPN"><img src={epnLogo} alt="epn"/></div>
             <h1>Reservas Deportivas</h1>
-            <div className="contorno"><img src={contorno} alt="contorno"/></div>
+            <div className="imgAdorno"><img src={contorno} alt="figura"/></div>
         </div>
         <nav>
-            <a onClick={() => {navigate('/'); setEnlaceActivo('/');console.log('enlaceActivo:', enlaceActivo);}}> Inicio</a>
-            <a onClick={() => {navigate('/canchas'); setEnlaceActivo('/canchas');console.log('enlaceActivo:', enlaceActivo);}}> Reservas</a>
-            <a onClick={() => {navigate('/eventos'); setEnlaceActivo('/eventos');}}> Eventos</a>
-            <a onClick={() => {navigate('/gestionar'); setEnlaceActivo('/gestionar');}}> Gestionar</a>
+            <a className={`${enlaceActivo === `/` ? 'enlace-seleccionado' : ''}`}
+                onClick={() => {navigate('/'); setEnlaceActivo('/');}}> Inicio</a>
+            <a className={`${enlaceActivo === `/canchas`? 'enlace-seleccionado' : ''}`}
+                onClick={() => {navigate('/canchas'); setEnlaceActivo('/canchas');}}> Reservas</a>
+            <a className={`${enlaceActivo === `/eventos` ? 'enlace-seleccionado' : ''}`}
+                onClick={() => {navigate('/eventos'); setEnlaceActivo('/eventos');}}> Eventos</a>
+            <a className={`${enlaceActivo === `/gestionar` ? 'enlace-seleccionado' : ''}`}
+                onClick={() => {navigate('/gestionar'); setEnlaceActivo('/gestionar');}}> Gestionar</a>
         </nav>
         
         </header>

@@ -22,7 +22,7 @@
         height: 150px;
         position:sticky;
         top: 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
     }
 
     .encabezado1{
@@ -31,15 +31,18 @@
         background-color: var(--azul--);
         display: grid;
         justify-content: end;
+        align-items:center;
     }
     .encabezado1 a {
         display: flex;
         align-items: center;
+        width: 50px;
+        height: auto;
+        margin-right: 20px;
     }
       
     .encabezado1 a img {
-        margin-right: 50px;
-        width: 35px;
+        width: 30px;
         border-radius: 50%;
     }
 
@@ -54,17 +57,19 @@
         grid-template-columns: 30% 40% 30%;
     }
 
-    .contorno{
-        display: grid;
+    .imgAdorno{
+        display: flex;
         justify-content: end;
+        align-items: center;
     }
-    .contorno img{
-        width: 100%;
+    .imgAdorno img{
+        max-width: 100%;
         height: 70px;
-        object-fit:contain;
+        object-fit: cover;
+        object-position:left;
     }
     
-    .logo img{
+    .logoEPN img{
         height:67px;
         padding-top: 2px;
     }
@@ -89,9 +94,10 @@
         background-color: var(--azul--);
         color: var(--gris--);
     }
-    nav a:active{ 
+
+    .enlace-seleccionado { 
         background-color: var(--azul--);
-        color: var(--blanco--)
+        color: var(--blanco--);
     }
 }
 
