@@ -101,16 +101,19 @@ const MainImplementos = () => {
 
   const CanchaCard2 = ({ cancha }) => {
     return (
-      <div className="cancha-card">
-        <img className="canchaCardImagen" src={cancha.imagen} alt={cancha.etiqueta} />
-        <input
-          type="radio"
-          id={cancha.id}
-          name="grupoCanchasCard" 
-          // checked={cancha.seleccionada}
-          // onChange={() => manejarSeleccion(cancha.id)}
-        />
-        <label htmlFor={cancha.id}>{cancha.etiqueta}</label>
+      <div className="card" onClick={() => document.getElementById(cancha.id).click()}>
+        <img src={cancha.imagen} alt={cancha.etiqueta} />
+        <div>
+          <input
+            type="radio"
+            id={cancha.id}
+            name="grupoCanchasCard" 
+            // checked={cancha.seleccionada}
+            // onChange={() => manejarSeleccion(cancha.id)}
+          />
+          <label htmlFor={cancha.id}>{cancha.etiqueta}</label>
+        </div>
+        
       </div>
     );
   };

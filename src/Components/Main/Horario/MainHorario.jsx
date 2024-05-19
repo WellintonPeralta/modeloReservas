@@ -9,7 +9,11 @@ function MainHorario({ handleAvailabilityClick }) {
     const [selected, setSelected] = useState(null);
  
   return (
-    <div className = "contenedorCalendario">
+    <div className="principal">
+        <div className="titulo_contenedor">
+            <h3>Horario</h3>
+        </div>
+        <div className = "contenedorCalendario">
         <div className="calendario">
         <div className="dias">
             <div className="celda-vacia">Hora</div>
@@ -41,6 +45,8 @@ function MainHorario({ handleAvailabilityClick }) {
             <button onClick= {() => navigate('/')}>Cancelar</button>
         </div>
     </div>
+    </div>
+    
   );
 
 }

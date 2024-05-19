@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import CanchaCard from './CanchasCards'; 
 import '../Main.css'
 
 import { useNavigate } from 'react-router-dom';
 import imgCanchaTemp from '../../../assets/perfil.png'
-import imgReferenciaTemporal from '../../../assets/imgJugando.jpg'
-
+import imgReferenciaTemporal from '../../../assets/imgCanchas.jpg'
 const MainCanchas = ()=>{
 
     const canchas = {
@@ -77,7 +75,6 @@ const MainCanchas = ()=>{
     
     const navigate = useNavigate();
     const [selectedSport, setSelectedSport] = useState('Basquet');
-    // const [idCardSeleccionada, setIdCardSeleccionada] = useState(null);
 
     const handleDeporteClick = (sportName) => {
         setSelectedSport(sportName);
@@ -97,6 +94,23 @@ const MainCanchas = ()=>{
         );
     };
     
+    const CanchaCard = ({ cancha }) => {
+        return (
+          <div className="card" onClick={() => document.getElementById(cancha.id).click()}>
+            <img src={cancha.imagen} alt={cancha.etiqueta} />
+            <div>
+              <input
+                type="radio"
+                id={cancha.id}
+                name="grupoCanchasCard" 
+                // checked={cancha.seleccionada}
+                // onChange={() => manejarSeleccion(cancha.id)}
+              />
+              <label htmlFor={cancha.id}>{cancha.etiqueta}</label>
+            </div> 
+          </div>
+        );
+    };
     
 
     return(
