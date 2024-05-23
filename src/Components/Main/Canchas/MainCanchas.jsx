@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import '../Main.css'
+// modals
+import {useModal} from "../Modals/useModal";
+import ModalCanchas from "../Modals/ModalCanchas";
 
 import { useNavigate } from 'react-router-dom';
 import imgCanchaTemp from '../../../assets/perfil.png'
@@ -72,6 +75,8 @@ const MainCanchas = ()=>{
         ]
     }
     
+    //modals
+    const [isOpenModel, openModal, closeModal] = useModal(false);
     
     const navigate = useNavigate();
     const [selectedSport, setSelectedSport] = useState('Basquet');
@@ -115,6 +120,7 @@ const MainCanchas = ()=>{
 
     return(
         <div className="principal">
+        <ModalCanchas isOpen={isOpenModel} closeModal={closeModal}/>
         <div className="titulo_contenedor">
             <h3>Canchas</h3>
         </div>
@@ -139,9 +145,9 @@ const MainCanchas = ()=>{
         </div>
         <div className="botones">
             <button onClick= {() => navigate('/implementos')}>Reservar</button>
-            <button onClick= {() => navigate('/')}>Cancelar</button>
-
+            <button onClick= {openModal}>Cancelar</button>
         </div>
+        
     </div>
 
     )

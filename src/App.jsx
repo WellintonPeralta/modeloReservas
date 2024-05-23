@@ -1,5 +1,6 @@
 import { Header } from './Components/Header/Header';  
 import MainInicio from './Components/Main/MainInicio';
+import MainReservas from './Components/Main/MainReservas';
 import MainCanchas from './Components/Main/Canchas/MainCanchas';  
 import MainImplementos from './Components/Main/Implementos/MainImplementos';
 import MainCalendario from './Components/Main/Horario/MainHorario';
@@ -15,6 +16,7 @@ function App() {
         </Header>
         <Routes>
           <Route path="/" element={<MainInicio />} />
+          <Route path="/reservar" element={<MainReservas />} />
           <Route path="/horario" element={<MainCalendario />} />
           <Route path="/canchas" element={<MainCanchas />} />
           <Route path="/implementos" element={<MainImplementos />} />
