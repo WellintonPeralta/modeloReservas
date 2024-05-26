@@ -41,7 +41,9 @@ const MainReservas = () => {
       <div className="titulo_contenedor">
         <h3>Reservar</h3>
       </div>
-      <div className="cards-deportes">{renderCards(deportes)}</div>
+      <div className="cards-deportes">
+        {renderCards(deportes)}
+      </div>
       <ModalCanchas
         isOpen={isOpenModel}
         closeModal={closeModal}

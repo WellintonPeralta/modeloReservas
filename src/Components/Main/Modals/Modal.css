@@ -34,9 +34,9 @@
     display: grid;
     position: relative;
     width: 80%;
-    height: 620px;
-    padding: 50px 80px;
-    grid-template-rows: 60px 40px 360px 60px;
+    height: 640px;
+    padding: 30px 80px;
+    grid-template-rows: 60px 40px 410px 60px;
     background-color: white;
     border-radius: 10px;
     
@@ -55,23 +55,23 @@
     justify-content: center;
     align-items: center;
 }
-.modal-botones-canchas{
+.modal-botones{
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: 15%;
     background-color: var(--gris--);
 }
 
-.modal-botones-canchas button{
+.modal-botones button{
     background-color: var(--azul--);
     color: white;
-    margin: 0px 100px;
     width: 180px;
     height: 40px;
     border: 0;
     cursor: pointer;
 }
-.modal-botones-canchas button:hover{
+.modal-botones button:hover{
     background-color: var(--crema--);
     color: var(--azul--);
     border: 0;
@@ -80,8 +80,8 @@
 .cards-modal{
     display: flex;
     flex-wrap: wrap; 
-    padding: 3% ;
-    row-gap: 30px;
+    padding: 1% 3% ;
+    row-gap: 20px;
     column-gap: 10%;
     /* height: 380px; */
     justify-content: center;
@@ -89,27 +89,80 @@
     overflow-y: scroll;
 }
 
-.card-Deporte{
+/*Horario*/
+.contenedorCalendario{
+    display: grid;
+}
+
+.calendario{
+    width: 80%;
+    margin: 10px auto;
+    grid-template-columns: auto repeat(5, 1fr);
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  
+.dias {
+    display: grid;
+    grid-template-rows: auto;       
+    grid-template-columns: auto repeat(5, 1fr);
+}   
+.celda-vacia{
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: var(--gris--);
+}
+
+.celda-dias {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: var(--gris--);
+}
+
+.celda-dia {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+
+}
+
+.celda-horas {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: var(--gris--);
+}
+
+.fila-hora {
+    display: grid;
+    grid-template-columns: auto repeat(5, 1fr);
+}
+
+.celda-dia:hover {
+    background-color:var(--azul--);
+    cursor: pointer;
+    color: var(--blanco--);
+}
+
+.seleccionada {
+    background-color: var(--azul--);
+    color: var(--blanco--);
+}
+
+/*informacion resumen*/
+.contenedor-informacion{
     display: grid;
     justify-content: center;
-    text-align: center;
-    grid-template-rows: 80% 20%;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 240px;
-    height: 180px;
-    box-shadow: 0px 8px 15px 0px rgba(147, 35, 35, 0.4);
     
 }
-
-.card-Deporte:hover{
-    box-shadow: 0px 0px 20px 4px rgba(2, 57, 126, 0.6);
+.contenedor-informacion div{
+    display: flex;
+    
 }
-
-.card-Deporte img{
-    height: 100%;
-}
-.card-Deporte input{
-    margin-right: 10px;
+.contenedor-informacion h3{
+    width: 360px;
 }

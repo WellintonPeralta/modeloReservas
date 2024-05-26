@@ -219,7 +219,7 @@
     }
     
     /*horario*/
-    .contenedorCalendario{
+    /* .contenedorCalendario{
         display: grid;
     }
     
@@ -279,7 +279,7 @@
     .seleccionada {
         background-color: var(--azul--);
         color: var(--blanco--);
-    }
+    } */
 }
 
 

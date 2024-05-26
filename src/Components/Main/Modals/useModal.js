@@ -20,3 +20,15 @@ export const useSelectedCancha = () => {
 
   return [selectedCancha, setSelectedCancha];
 };
+
+export const useSelectedHorario = () => {
+  const [selectedHorario, setSelectedHorario] = useState(null); 
+
+  return [selectedHorario, setSelectedHorario];
+};
+
+export const useSelectedImplemento = () => {
+  const [selectedImplemento, setSelectedImplemento] = useState(null); 
+
+  return [selectedImplemento, setSelectedImplemento];
+};
